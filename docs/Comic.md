@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | 
 **code** | **str** |  | 
-**destination_link_count** | **int** |  | 
+**provider_count** | **int** |  | 
 **chapter_count** | **int** |  | 
 
 ## Example

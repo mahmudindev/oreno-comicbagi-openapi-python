@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | 
 **host** | **str** |  | 
 **name** | **str** |  | 
-**item_language_count** | **int** |  | 
+**redacted** | **bool** |  | 
 **link_count** | **int** |  | 
 
 ## Example

@@ -5,15 +5,15 @@ All URIs are relative to */api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_comic**](ComicApi.md#add_comic) | **POST** /rest/comics | Add comic.
-[**add_comic_destination_link**](ComicApi.md#add_comic_destination_link) | **POST** /rest/comics/{comicCode}/destination-links | Add comic destination link.
+[**add_comic_provider**](ComicApi.md#add_comic_provider) | **POST** /rest/comics/{comicCode}/providers | Add comic provider.
 [**delete_comic**](ComicApi.md#delete_comic) | **DELETE** /rest/comics/{code} | Delete comic.
-[**delete_comic_destination_link**](ComicApi.md#delete_comic_destination_link) | **DELETE** /rest/comics/{comicCode}/destination-links/{ulid} | Delete comic destination link.
+[**delete_comic_provider**](ComicApi.md#delete_comic_provider) | **DELETE** /rest/comics/{comicCode}/providers/{ulid} | Delete comic provider.
 [**get_comic**](ComicApi.md#get_comic) | **GET** /rest/comics/{code} | Get comic.
-[**get_comic_destination_link**](ComicApi.md#get_comic_destination_link) | **GET** /rest/comics/{comicCode}/destination-links/{ulid} | Get comic destination link.
+[**get_comic_provider**](ComicApi.md#get_comic_provider) | **GET** /rest/comics/{comicCode}/providers/{ulid} | Get comic provider.
 [**list_comic**](ComicApi.md#list_comic) | **GET** /rest/comics | List comic.
-[**list_comic_destination_link**](ComicApi.md#list_comic_destination_link) | **GET** /rest/comics/{comicCode}/destination-links | List comic destination link.
+[**list_comic_provider**](ComicApi.md#list_comic_provider) | **GET** /rest/comics/{comicCode}/providers | List comic provider.
 [**update_comic**](ComicApi.md#update_comic) | **PATCH** /rest/comics/{code} | Update comic.
-[**update_comic_destination_link**](ComicApi.md#update_comic_destination_link) | **PATCH** /rest/comics/{comicCode}/destination-links/{ulid} | Update comic destination link.
+[**update_comic_provider**](ComicApi.md#update_comic_provider) | **PATCH** /rest/comics/{comicCode}/providers/{ulid} | Update comic provider.
 
 
 # **add_comic**
@@ -94,10 +94,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_comic_destination_link**
-> ComicDestinationLink add_comic_destination_link(comic_code, new_comic_destination_link)
+# **add_comic_provider**
+> ComicProvider add_comic_provider(comic_code, new_comic_provider)
 
-Add comic destination link.
+Add comic provider.
 
 ### Example
 
@@ -105,8 +105,8 @@ Add comic destination link.
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_destination_link import ComicDestinationLink
-from comicbagi_openapi.models.new_comic_destination_link import NewComicDestinationLink
+from comicbagi_openapi.models.comic_provider import ComicProvider
+from comicbagi_openapi.models.new_comic_provider import NewComicProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -131,15 +131,15 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = comicbagi_openapi.ComicApi(api_client)
     comic_code = 'comic_code_example' # str | 
-    new_comic_destination_link = comicbagi_openapi.NewComicDestinationLink() # NewComicDestinationLink | 
+    new_comic_provider = comicbagi_openapi.NewComicProvider() # NewComicProvider | 
 
     try:
-        # Add comic destination link.
-        api_response = api_instance.add_comic_destination_link(comic_code, new_comic_destination_link)
-        print("The response of ComicApi->add_comic_destination_link:\n")
+        # Add comic provider.
+        api_response = api_instance.add_comic_provider(comic_code, new_comic_provider)
+        print("The response of ComicApi->add_comic_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicApi->add_comic_destination_link: %s\n" % e)
+        print("Exception when calling ComicApi->add_comic_provider: %s\n" % e)
 ```
 
 
@@ -150,11 +150,11 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **comic_code** | **str**|  | 
- **new_comic_destination_link** | [**NewComicDestinationLink**](NewComicDestinationLink.md)|  | 
+ **new_comic_provider** | [**NewComicProvider**](NewComicProvider.md)|  | 
 
 ### Return type
 
-[**ComicDestinationLink**](ComicDestinationLink.md)
+[**ComicProvider**](ComicProvider.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Comic destination link added. |  * Location -  <br>  |
+**201** | Comic provider added. |  * Location -  <br>  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -248,10 +248,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_comic_destination_link**
-> delete_comic_destination_link(comic_code, ulid)
+# **delete_comic_provider**
+> delete_comic_provider(comic_code, ulid)
 
-Delete comic destination link.
+Delete comic provider.
 
 ### Example
 
@@ -286,10 +286,10 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     ulid = 'ulid_example' # str | 
 
     try:
-        # Delete comic destination link.
-        api_instance.delete_comic_destination_link(comic_code, ulid)
+        # Delete comic provider.
+        api_instance.delete_comic_provider(comic_code, ulid)
     except Exception as e:
-        print("Exception when calling ComicApi->delete_comic_destination_link: %s\n" % e)
+        print("Exception when calling ComicApi->delete_comic_provider: %s\n" % e)
 ```
 
 
@@ -319,7 +319,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Comic destination link deleted. |  -  |
+**204** | Comic provider deleted. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -391,17 +391,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_comic_destination_link**
-> ComicDestinationLink get_comic_destination_link(comic_code, ulid)
+# **get_comic_provider**
+> ComicProvider get_comic_provider(comic_code, ulid)
 
-Get comic destination link.
+Get comic provider.
 
 ### Example
 
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_destination_link import ComicDestinationLink
+from comicbagi_openapi.models.comic_provider import ComicProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -420,12 +420,12 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     ulid = 'ulid_example' # str | 
 
     try:
-        # Get comic destination link.
-        api_response = api_instance.get_comic_destination_link(comic_code, ulid)
-        print("The response of ComicApi->get_comic_destination_link:\n")
+        # Get comic provider.
+        api_response = api_instance.get_comic_provider(comic_code, ulid)
+        print("The response of ComicApi->get_comic_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicApi->get_comic_destination_link: %s\n" % e)
+        print("Exception when calling ComicApi->get_comic_provider: %s\n" % e)
 ```
 
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComicDestinationLink**](ComicDestinationLink.md)
+[**ComicProvider**](ComicProvider.md)
 
 ### Authorization
 
@@ -455,13 +455,13 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic destination link gets. |  -  |
+**200** | Comic provider gets. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_comic**
-> List[Comic] list_comic(page=page, limit=limit, order=order, order_by=order_by, destination_link=destination_link)
+> List[Comic] list_comic(page=page, limit=limit, order=order, order_by=order_by, provider_link_website_host=provider_link_website_host, provider_link_relative_reference=provider_link_relative_reference, provider_link_href=provider_link_href, provider_language_lang=provider_language_lang)
 
 List comic.
 
@@ -489,11 +489,14 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     limit = 56 # int |  (optional)
     order = 'order_example' # str |  (optional)
     order_by = ['order_by_example'] # List[str] |  (optional)
-    destination_link = ['destination_link_example'] # List[str] |  (optional)
+    provider_link_website_host = ['provider_link_website_host_example'] # List[str] |  (optional)
+    provider_link_relative_reference = ['provider_link_relative_reference_example'] # List[str] |  (optional)
+    provider_link_href = ['provider_link_href_example'] # List[str] |  (optional)
+    provider_language_lang = ['provider_language_lang_example'] # List[str] |  (optional)
 
     try:
         # List comic.
-        api_response = api_instance.list_comic(page=page, limit=limit, order=order, order_by=order_by, destination_link=destination_link)
+        api_response = api_instance.list_comic(page=page, limit=limit, order=order, order_by=order_by, provider_link_website_host=provider_link_website_host, provider_link_relative_reference=provider_link_relative_reference, provider_link_href=provider_link_href, provider_language_lang=provider_language_lang)
         print("The response of ComicApi->list_comic:\n")
         pprint(api_response)
     except Exception as e:
@@ -511,7 +514,10 @@ Name | Type | Description  | Notes
  **limit** | **int**|  | [optional] 
  **order** | **str**|  | [optional] 
  **order_by** | [**List[str]**](str.md)|  | [optional] 
- **destination_link** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_website_host** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_relative_reference** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_href** | [**List[str]**](str.md)|  | [optional] 
+ **provider_language_lang** | [**List[str]**](str.md)|  | [optional] 
 
 ### Return type
 
@@ -535,17 +541,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_comic_destination_link**
-> List[ComicDestinationLink] list_comic_destination_link(comic_code, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href)
+# **list_comic_provider**
+> List[ComicProvider] list_comic_provider(comic_code, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href, language_lang=language_lang, unredact=unredact)
 
-List comic destination link.
+List comic provider.
 
 ### Example
 
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_destination_link import ComicDestinationLink
+from comicbagi_openapi.models.comic_provider import ComicProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -568,14 +574,16 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     link_website_host = ['link_website_host_example'] # List[str] |  (optional)
     link_relative_reference = ['link_relative_reference_example'] # List[str] |  (optional)
     link_href = ['link_href_example'] # List[str] |  (optional)
+    language_lang = ['language_lang_example'] # List[str] |  (optional)
+    unredact = ['unredact_example'] # List[str] |  (optional)
 
     try:
-        # List comic destination link.
-        api_response = api_instance.list_comic_destination_link(comic_code, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href)
-        print("The response of ComicApi->list_comic_destination_link:\n")
+        # List comic provider.
+        api_response = api_instance.list_comic_provider(comic_code, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href, language_lang=language_lang, unredact=unredact)
+        print("The response of ComicApi->list_comic_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicApi->list_comic_destination_link: %s\n" % e)
+        print("Exception when calling ComicApi->list_comic_provider: %s\n" % e)
 ```
 
 
@@ -593,10 +601,12 @@ Name | Type | Description  | Notes
  **link_website_host** | [**List[str]**](str.md)|  | [optional] 
  **link_relative_reference** | [**List[str]**](str.md)|  | [optional] 
  **link_href** | [**List[str]**](str.md)|  | [optional] 
+ **language_lang** | [**List[str]**](str.md)|  | [optional] 
+ **unredact** | [**List[str]**](str.md)|  | [optional] 
 
 ### Return type
 
-[**List[ComicDestinationLink]**](ComicDestinationLink.md)
+[**List[ComicProvider]**](ComicProvider.md)
 
 ### Authorization
 
@@ -611,7 +621,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic destination link list. |  * X-Total-Count -  <br>  * X-Pagination-Limit -  <br>  |
+**200** | Comic provider list. |  * X-Total-Count -  <br>  * X-Pagination-Limit -  <br>  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -697,10 +707,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_comic_destination_link**
-> ComicDestinationLink update_comic_destination_link(comic_code, ulid, set_comic_destination_link)
+# **update_comic_provider**
+> ComicProvider update_comic_provider(comic_code, ulid, set_comic_provider)
 
-Update comic destination link.
+Update comic provider.
 
 ### Example
 
@@ -708,8 +718,8 @@ Update comic destination link.
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_destination_link import ComicDestinationLink
-from comicbagi_openapi.models.set_comic_destination_link import SetComicDestinationLink
+from comicbagi_openapi.models.comic_provider import ComicProvider
+from comicbagi_openapi.models.set_comic_provider import SetComicProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -735,15 +745,15 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     api_instance = comicbagi_openapi.ComicApi(api_client)
     comic_code = 'comic_code_example' # str | 
     ulid = 'ulid_example' # str | 
-    set_comic_destination_link = comicbagi_openapi.SetComicDestinationLink() # SetComicDestinationLink | 
+    set_comic_provider = comicbagi_openapi.SetComicProvider() # SetComicProvider | 
 
     try:
-        # Update comic destination link.
-        api_response = api_instance.update_comic_destination_link(comic_code, ulid, set_comic_destination_link)
-        print("The response of ComicApi->update_comic_destination_link:\n")
+        # Update comic provider.
+        api_response = api_instance.update_comic_provider(comic_code, ulid, set_comic_provider)
+        print("The response of ComicApi->update_comic_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicApi->update_comic_destination_link: %s\n" % e)
+        print("Exception when calling ComicApi->update_comic_provider: %s\n" % e)
 ```
 
 
@@ -755,11 +765,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **comic_code** | **str**|  | 
  **ulid** | **str**|  | 
- **set_comic_destination_link** | [**SetComicDestinationLink**](SetComicDestinationLink.md)|  | 
+ **set_comic_provider** | [**SetComicProvider**](SetComicProvider.md)|  | 
 
 ### Return type
 
-[**ComicDestinationLink**](ComicDestinationLink.md)
+[**ComicProvider**](ComicProvider.md)
 
 ### Authorization
 
@@ -774,8 +784,8 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic destination link updated. |  * Location -  <br>  |
-**204** | Comic destination link unmodified. |  -  |
+**200** | Comic provider updated. |  * Location -  <br>  |
+**204** | Comic provider unmodified. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

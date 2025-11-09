@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | 
 **number** | **float** |  | 
-**version** | **str** |  | [optional] 
-**destination_link_count** | **int** |  | 
+**version** | **str** |  | 
+**provider_count** | **int** |  | 
 
 ## Example
 

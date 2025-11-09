@@ -5,15 +5,15 @@ All URIs are relative to */api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_comic_chapter**](ComicChapterApi.md#add_comic_chapter) | **POST** /rest/comics/{comicCode}/chapters | Add comic chapter.
-[**add_comic_chapter_destination_link**](ComicChapterApi.md#add_comic_chapter_destination_link) | **POST** /rest/comics/{comicCode}/chapters/{chapterNV}/destination-links | Add comic chapter destination link.
+[**add_comic_chapter_provider**](ComicChapterApi.md#add_comic_chapter_provider) | **POST** /rest/comics/{comicCode}/chapters/{chapterNV}/providers | Add comic chapter provider.
 [**delete_comic_chapter**](ComicChapterApi.md#delete_comic_chapter) | **DELETE** /rest/comics/{comicCode}/chapters/{nv} | Delete comic chapter.
-[**delete_comic_chapter_destination_link**](ComicChapterApi.md#delete_comic_chapter_destination_link) | **DELETE** /rest/comics/{comicCode}/chapters/{chapterNV}/destination-links/{ulid} | Delete comic chapter destination link.
+[**delete_comic_chapter_provider**](ComicChapterApi.md#delete_comic_chapter_provider) | **DELETE** /rest/comics/{comicCode}/chapters/{chapterNV}/providers/{ulid} | Delete comic chapter provider.
 [**get_comic_chapter**](ComicChapterApi.md#get_comic_chapter) | **GET** /rest/comics/{comicCode}/chapters/{nv} | Get comic chapter.
-[**get_comic_chapter_destination_link**](ComicChapterApi.md#get_comic_chapter_destination_link) | **GET** /rest/comics/{comicCode}/chapters/{chapterNV}/destination-links/{ulid} | Get comic chapter destination link.
+[**get_comic_chapter_provider**](ComicChapterApi.md#get_comic_chapter_provider) | **GET** /rest/comics/{comicCode}/chapters/{chapterNV}/providers/{ulid} | Get comic chapter provider.
 [**list_comic_chapter**](ComicChapterApi.md#list_comic_chapter) | **GET** /rest/comics/{comicCode}/chapters | List comic chapter.
-[**list_comic_chapter_destination_link**](ComicChapterApi.md#list_comic_chapter_destination_link) | **GET** /rest/comics/{comicCode}/chapters/{chapterNV}/destination-links | List comic chapter destination link.
+[**list_comic_chapter_provider**](ComicChapterApi.md#list_comic_chapter_provider) | **GET** /rest/comics/{comicCode}/chapters/{chapterNV}/providers | List comic chapter properties.
 [**update_comic_chapter**](ComicChapterApi.md#update_comic_chapter) | **PATCH** /rest/comics/{comicCode}/chapters/{nv} | Update comic chapter.
-[**update_comic_chapter_destination_link**](ComicChapterApi.md#update_comic_chapter_destination_link) | **PATCH** /rest/comics/{comicCode}/chapters/{chapterNV}/destination-links/{ulid} | Update comic chapter destination link.
+[**update_comic_chapter_provider**](ComicChapterApi.md#update_comic_chapter_provider) | **PATCH** /rest/comics/{comicCode}/chapters/{chapterNV}/providers/{ulid} | Update comic chapter provider.
 
 
 # **add_comic_chapter**
@@ -96,10 +96,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_comic_chapter_destination_link**
-> ComicChapterDestinationLink add_comic_chapter_destination_link(comic_code, chapter_nv, new_comic_chapter_destination_link)
+# **add_comic_chapter_provider**
+> ComicChapterProvider add_comic_chapter_provider(comic_code, chapter_nv, new_comic_chapter_provider)
 
-Add comic chapter destination link.
+Add comic chapter provider.
 
 ### Example
 
@@ -107,8 +107,8 @@ Add comic chapter destination link.
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_chapter_destination_link import ComicChapterDestinationLink
-from comicbagi_openapi.models.new_comic_chapter_destination_link import NewComicChapterDestinationLink
+from comicbagi_openapi.models.comic_chapter_provider import ComicChapterProvider
+from comicbagi_openapi.models.new_comic_chapter_provider import NewComicChapterProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -134,15 +134,15 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     api_instance = comicbagi_openapi.ComicChapterApi(api_client)
     comic_code = 'comic_code_example' # str | 
     chapter_nv = 'chapter_nv_example' # str | Number[+Version]
-    new_comic_chapter_destination_link = comicbagi_openapi.NewComicChapterDestinationLink() # NewComicChapterDestinationLink | 
+    new_comic_chapter_provider = comicbagi_openapi.NewComicChapterProvider() # NewComicChapterProvider | 
 
     try:
-        # Add comic chapter destination link.
-        api_response = api_instance.add_comic_chapter_destination_link(comic_code, chapter_nv, new_comic_chapter_destination_link)
-        print("The response of ComicChapterApi->add_comic_chapter_destination_link:\n")
+        # Add comic chapter provider.
+        api_response = api_instance.add_comic_chapter_provider(comic_code, chapter_nv, new_comic_chapter_provider)
+        print("The response of ComicChapterApi->add_comic_chapter_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicChapterApi->add_comic_chapter_destination_link: %s\n" % e)
+        print("Exception when calling ComicChapterApi->add_comic_chapter_provider: %s\n" % e)
 ```
 
 
@@ -154,11 +154,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **comic_code** | **str**|  | 
  **chapter_nv** | **str**| Number[+Version] | 
- **new_comic_chapter_destination_link** | [**NewComicChapterDestinationLink**](NewComicChapterDestinationLink.md)|  | 
+ **new_comic_chapter_provider** | [**NewComicChapterProvider**](NewComicChapterProvider.md)|  | 
 
 ### Return type
 
-[**ComicChapterDestinationLink**](ComicChapterDestinationLink.md)
+[**ComicChapterProvider**](ComicChapterProvider.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Comic chapter destination link added. |  * Location -  <br>  |
+**201** | Comic chapter provider added. |  * Location -  <br>  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -254,10 +254,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_comic_chapter_destination_link**
-> delete_comic_chapter_destination_link(comic_code, chapter_nv, ulid)
+# **delete_comic_chapter_provider**
+> delete_comic_chapter_provider(comic_code, chapter_nv, ulid)
 
-Delete comic chapter destination link.
+Delete comic chapter provider.
 
 ### Example
 
@@ -293,10 +293,10 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     ulid = 'ulid_example' # str | 
 
     try:
-        # Delete comic chapter destination link.
-        api_instance.delete_comic_chapter_destination_link(comic_code, chapter_nv, ulid)
+        # Delete comic chapter provider.
+        api_instance.delete_comic_chapter_provider(comic_code, chapter_nv, ulid)
     except Exception as e:
-        print("Exception when calling ComicChapterApi->delete_comic_chapter_destination_link: %s\n" % e)
+        print("Exception when calling ComicChapterApi->delete_comic_chapter_provider: %s\n" % e)
 ```
 
 
@@ -327,7 +327,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Comic chapter destination link deleted. |  -  |
+**204** | Comic chapter provider deleted. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -401,17 +401,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_comic_chapter_destination_link**
-> ComicChapterDestinationLink get_comic_chapter_destination_link(comic_code, chapter_nv, ulid)
+# **get_comic_chapter_provider**
+> ComicChapterProvider get_comic_chapter_provider(comic_code, chapter_nv, ulid)
 
-Get comic chapter destination link.
+Get comic chapter provider.
 
 ### Example
 
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_chapter_destination_link import ComicChapterDestinationLink
+from comicbagi_openapi.models.comic_chapter_provider import ComicChapterProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -431,12 +431,12 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     ulid = 'ulid_example' # str | 
 
     try:
-        # Get comic chapter destination link.
-        api_response = api_instance.get_comic_chapter_destination_link(comic_code, chapter_nv, ulid)
-        print("The response of ComicChapterApi->get_comic_chapter_destination_link:\n")
+        # Get comic chapter provider.
+        api_response = api_instance.get_comic_chapter_provider(comic_code, chapter_nv, ulid)
+        print("The response of ComicChapterApi->get_comic_chapter_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicChapterApi->get_comic_chapter_destination_link: %s\n" % e)
+        print("Exception when calling ComicChapterApi->get_comic_chapter_provider: %s\n" % e)
 ```
 
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComicChapterDestinationLink**](ComicChapterDestinationLink.md)
+[**ComicChapterProvider**](ComicChapterProvider.md)
 
 ### Authorization
 
@@ -467,13 +467,13 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic chapter destination link gets. |  -  |
+**200** | Comic chapter provider gets. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_comic_chapter**
-> List[ComicChapter] list_comic_chapter(comic_code, page=page, limit=limit, order=order, order_by=order_by, destination_link=destination_link)
+> List[ComicChapter] list_comic_chapter(comic_code, page=page, limit=limit, order=order, order_by=order_by, provider_link_website_host=provider_link_website_host, provider_link_relative_reference=provider_link_relative_reference, provider_link_href=provider_link_href, provider_language_lang=provider_language_lang)
 
 List comic chapter.
 
@@ -502,11 +502,14 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     limit = 56 # int |  (optional)
     order = 'order_example' # str |  (optional)
     order_by = ['order_by_example'] # List[str] |  (optional)
-    destination_link = ['destination_link_example'] # List[str] |  (optional)
+    provider_link_website_host = ['provider_link_website_host_example'] # List[str] |  (optional)
+    provider_link_relative_reference = ['provider_link_relative_reference_example'] # List[str] |  (optional)
+    provider_link_href = ['provider_link_href_example'] # List[str] |  (optional)
+    provider_language_lang = ['provider_language_lang_example'] # List[str] |  (optional)
 
     try:
         # List comic chapter.
-        api_response = api_instance.list_comic_chapter(comic_code, page=page, limit=limit, order=order, order_by=order_by, destination_link=destination_link)
+        api_response = api_instance.list_comic_chapter(comic_code, page=page, limit=limit, order=order, order_by=order_by, provider_link_website_host=provider_link_website_host, provider_link_relative_reference=provider_link_relative_reference, provider_link_href=provider_link_href, provider_language_lang=provider_language_lang)
         print("The response of ComicChapterApi->list_comic_chapter:\n")
         pprint(api_response)
     except Exception as e:
@@ -525,7 +528,10 @@ Name | Type | Description  | Notes
  **limit** | **int**|  | [optional] 
  **order** | **str**|  | [optional] 
  **order_by** | [**List[str]**](str.md)|  | [optional] 
- **destination_link** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_website_host** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_relative_reference** | [**List[str]**](str.md)|  | [optional] 
+ **provider_link_href** | [**List[str]**](str.md)|  | [optional] 
+ **provider_language_lang** | [**List[str]**](str.md)|  | [optional] 
 
 ### Return type
 
@@ -549,17 +555,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_comic_chapter_destination_link**
-> List[ComicChapterDestinationLink] list_comic_chapter_destination_link(comic_code, chapter_nv, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href)
+# **list_comic_chapter_provider**
+> List[ComicChapterProvider] list_comic_chapter_provider(comic_code, chapter_nv, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href, language_lang=language_lang, unredact=unredact)
 
-List comic chapter destination link.
+List comic chapter properties.
 
 ### Example
 
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_chapter_destination_link import ComicChapterDestinationLink
+from comicbagi_openapi.models.comic_chapter_provider import ComicChapterProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -583,14 +589,16 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     link_website_host = ['link_website_host_example'] # List[str] |  (optional)
     link_relative_reference = ['link_relative_reference_example'] # List[str] |  (optional)
     link_href = ['link_href_example'] # List[str] |  (optional)
+    language_lang = ['language_lang_example'] # List[str] |  (optional)
+    unredact = ['unredact_example'] # List[str] |  (optional)
 
     try:
-        # List comic chapter destination link.
-        api_response = api_instance.list_comic_chapter_destination_link(comic_code, chapter_nv, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href)
-        print("The response of ComicChapterApi->list_comic_chapter_destination_link:\n")
+        # List comic chapter properties.
+        api_response = api_instance.list_comic_chapter_provider(comic_code, chapter_nv, page=page, limit=limit, order=order, order_by=order_by, link_website_host=link_website_host, link_relative_reference=link_relative_reference, link_href=link_href, language_lang=language_lang, unredact=unredact)
+        print("The response of ComicChapterApi->list_comic_chapter_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicChapterApi->list_comic_chapter_destination_link: %s\n" % e)
+        print("Exception when calling ComicChapterApi->list_comic_chapter_provider: %s\n" % e)
 ```
 
 
@@ -609,10 +617,12 @@ Name | Type | Description  | Notes
  **link_website_host** | [**List[str]**](str.md)|  | [optional] 
  **link_relative_reference** | [**List[str]**](str.md)|  | [optional] 
  **link_href** | [**List[str]**](str.md)|  | [optional] 
+ **language_lang** | [**List[str]**](str.md)|  | [optional] 
+ **unredact** | [**List[str]**](str.md)|  | [optional] 
 
 ### Return type
 
-[**List[ComicChapterDestinationLink]**](ComicChapterDestinationLink.md)
+[**List[ComicChapterProvider]**](ComicChapterProvider.md)
 
 ### Authorization
 
@@ -627,7 +637,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic destination link list. |  * X-Total-Count -  <br>  * X-Pagination-Limit -  <br>  |
+**200** | Comic provider list. |  * X-Total-Count -  <br>  * X-Pagination-Limit -  <br>  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -715,10 +725,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_comic_chapter_destination_link**
-> ComicChapterDestinationLink update_comic_chapter_destination_link(comic_code, chapter_nv, ulid, set_comic_chapter_destination_link)
+# **update_comic_chapter_provider**
+> ComicChapterProvider update_comic_chapter_provider(comic_code, chapter_nv, ulid, set_comic_chapter_provider)
 
-Update comic chapter destination link.
+Update comic chapter provider.
 
 ### Example
 
@@ -726,8 +736,8 @@ Update comic chapter destination link.
 
 ```python
 import comicbagi_openapi
-from comicbagi_openapi.models.comic_chapter_destination_link import ComicChapterDestinationLink
-from comicbagi_openapi.models.set_comic_chapter_destination_link import SetComicChapterDestinationLink
+from comicbagi_openapi.models.comic_chapter_provider import ComicChapterProvider
+from comicbagi_openapi.models.set_comic_chapter_provider import SetComicChapterProvider
 from comicbagi_openapi.rest import ApiException
 from pprint import pprint
 
@@ -754,15 +764,15 @@ with comicbagi_openapi.ApiClient(configuration) as api_client:
     comic_code = 'comic_code_example' # str | 
     chapter_nv = 'chapter_nv_example' # str | Number[+Version]
     ulid = 'ulid_example' # str | 
-    set_comic_chapter_destination_link = comicbagi_openapi.SetComicChapterDestinationLink() # SetComicChapterDestinationLink | 
+    set_comic_chapter_provider = comicbagi_openapi.SetComicChapterProvider() # SetComicChapterProvider | 
 
     try:
-        # Update comic chapter destination link.
-        api_response = api_instance.update_comic_chapter_destination_link(comic_code, chapter_nv, ulid, set_comic_chapter_destination_link)
-        print("The response of ComicChapterApi->update_comic_chapter_destination_link:\n")
+        # Update comic chapter provider.
+        api_response = api_instance.update_comic_chapter_provider(comic_code, chapter_nv, ulid, set_comic_chapter_provider)
+        print("The response of ComicChapterApi->update_comic_chapter_provider:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComicChapterApi->update_comic_chapter_destination_link: %s\n" % e)
+        print("Exception when calling ComicChapterApi->update_comic_chapter_provider: %s\n" % e)
 ```
 
 
@@ -775,11 +785,11 @@ Name | Type | Description  | Notes
  **comic_code** | **str**|  | 
  **chapter_nv** | **str**| Number[+Version] | 
  **ulid** | **str**|  | 
- **set_comic_chapter_destination_link** | [**SetComicChapterDestinationLink**](SetComicChapterDestinationLink.md)|  | 
+ **set_comic_chapter_provider** | [**SetComicChapterProvider**](SetComicChapterProvider.md)|  | 
 
 ### Return type
 
-[**ComicChapterDestinationLink**](ComicChapterDestinationLink.md)
+[**ComicChapterProvider**](ComicChapterProvider.md)
 
 ### Authorization
 
@@ -794,8 +804,8 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comic chapter destination link updated. |  * Location -  <br>  |
-**204** | Comic chapter destination link unmodified. |  -  |
+**200** | Comic chapter provider updated. |  * Location -  <br>  |
+**204** | Comic chapter provider unmodified. |  -  |
 **0** | Unexpected error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

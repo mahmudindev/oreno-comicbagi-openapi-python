@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**redacted** | **bool** |  | [optional] 
 
 ## Example
 
